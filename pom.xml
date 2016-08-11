@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.shedhack.trace</groupId>
-    <artifactId>trace-request-viewer-graylog</artifactId>
+    <artifactId>trace-request-graylog</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>trace-request-viewer-graylog</name>
-    <description>trace-request-viewer-graylog</description>
-    <url>https://github.com/imamchishty/trace-request-viewer-graylog</url>
+    <name>trace-request-graylog</name>
+    <description>trace-request-graylog</description>
+    <url>https://github.com/imamchishty/trace-request-graylog</url>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -33,16 +33,16 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git@github.com:imamchishty/trace-request-viewer-graylog.git</connection>
-        <developerConnection>scm:git:git@github.com:imamchishty/trace-request-viewer-graylog.git</developerConnection>
-        <url>git@github.com:imamchishty/trace-request-viewer-graylog.git</url>
+        <connection>scm:git:git@github.com:imamchishty/trace-request-graylog.git</connection>
+        <developerConnection>scm:git:git@github.com:imamchishty/trace-request-graylog.git</developerConnection>
+        <url>git@github.com:imamchishty/trace-request-graylog.git</url>
         <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
         <repository>
             <id>bintray</id>
-            <url>https://api.bintray.com/maven/imamchishty/maven/trace-request-viewer-graylog</url>
+            <url>https://api.bintray.com/maven/imamchishty/maven/trace-request-graylog</url>
         </repository>
     </distributionManagement>
 
@@ -65,8 +65,46 @@
 
         <dependency>
             <groupId>com.shedhack.trace</groupId>
+            <artifactId>trace-request-api</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.shedhack.exception</groupId>
+            <artifactId>exception-core</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.shedhack.trace</groupId>
             <artifactId>trace-request-viewer</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Rest API client dependencies -->
+        <dependency>
+            <groupId>com.mashape.unirest</groupId>
+            <artifactId>unirest-java</artifactId>
+            <version>1.4.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpasyncclient</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.3.6</version>
         </dependency>
 
         <!-- Spring -->
@@ -79,14 +117,29 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mustache</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring.boot.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
             <scope>test</scope>
         </dependency>
 

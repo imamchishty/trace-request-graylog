@@ -66,7 +66,7 @@ public class TraceRequestServiceGraylog implements TraceRequestService {
             for(Message message : graylogModel.getMessages()) {
 
                     // TODO A bit of a hack, when message is of RequestModel type json not converted properly, so reverted to a string
-                    requests.add(gson.fromJson(graylogModel.getMessages().get(0).getMessage().getMessage(), GraylogRequestModel.class));
+                    requests.add(gson.fromJson(message.getMessage().getMessage(), GraylogRequestModel.class));
 
             }
 
